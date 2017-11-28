@@ -32,5 +32,6 @@ build/
 
 .gradle
 production/
+bintrayUpload.gradle
 
 signing.properties
