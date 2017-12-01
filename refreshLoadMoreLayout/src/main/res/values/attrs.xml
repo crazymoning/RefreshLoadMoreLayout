@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RefreshLoadMoreLayout">
+        <attr name="refresh_type">
+            <flag name="follow" value="0"/>
+            <flag name="overlap" value="1"/>
+        </attr>
+
+        <attr name="head" format="reference"/>
+        <attr name="foot" format="reference"/>
+        <attr name="topScroll" format="boolean"/>
+        <attr name="bottomScroll" format="boolean"/>
+    </declare-styleable>
+</resources>
