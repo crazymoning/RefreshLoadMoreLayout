@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <cn.xzr.refreshloadmorelayout.view.ViscosityView
+        android:id="@+id/viscosity"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:background="@color/colorPrimary"/>
+
+    <SeekBar
+        android:id="@+id/seek_bar"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
