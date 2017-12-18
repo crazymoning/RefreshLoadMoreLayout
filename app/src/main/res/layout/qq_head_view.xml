@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:gravity="center">
 
-    <cn.xzr.refreshloadmorelayout.view.ViscosityView
+    <cn.xzr.refreshloadmorelayout.qq.ViscosityView
         android:id="@+id/viscosity_view"
         android:layout_width="100dp"
         android:layout_height="120dp"

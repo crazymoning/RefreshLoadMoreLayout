@@ -1,6 +1,5 @@
-package cn.xzr.refreshloadmorelayout.view
+package cn.xzr.refreshloadmorelayout.qq
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

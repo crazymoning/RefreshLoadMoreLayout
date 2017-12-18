@@ -1,4 +1,4 @@
-package cn.xzr.refreshloadmorelayout.view
+package cn.xzr.refreshloadmorelayout.qq
 
 import android.annotation.SuppressLint
 import android.content.Context

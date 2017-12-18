@@ -609,7 +609,7 @@ class RefreshLoadMoreLayout(context: Context, attrs: AttributeSet? = null, defSt
             } else {
                 null
             }
-        }
+        }else headView = null
 
         state = STATE_UP
         if (headRefresh != null && topScroll) {
@@ -628,33 +628,32 @@ class RefreshLoadMoreLayout(context: Context, attrs: AttributeSet? = null, defSt
     }
 
     fun setFootView(loadMore: IRefresh?) {
-        if (loadMore == null) {
-            return
-        }
         footRefresh = loadMore
         if (footView != null) {
             removeView(footView)
         }
 
-        footView = if (loadMore.getView(LayoutInflater.from(context), this) != null) {
-            getChildAt(childCount - 1)
-        } else {
-            null
-        }
-        contentView!!.bringToFront()
-        if (bottomScroll) {
+        if (loadMore != null){
+            footView = if (loadMore.getView(LayoutInflater.from(context), this) != null) {
+                getChildAt(childCount - 1)
+            } else {
+                null
+            }
+        }else footView = null
+        state = STATE_UP
+        if (bottomScroll && footRefresh != null) {
             footRefresh!!.onChangeType(this, IRefresh.TYPE_UP)
-            state = STATE_UP
-
-            if (scrollTop < 0) {
-                scrollTop = 0
-                requestLayout()
-            }
-            if (scrollY > 0) {
-                scrollTo(0, 0)
-            }
-            isControl = false
         }
+        isControl = false
+        contentView!!.bringToFront()
+        if (scrollTop < 0) {
+            scrollTop = 0
+            requestLayout()
+        }
+        if (scrollY > 0) {
+            scrollTo(0, 0)
+        }
+
 
     }
 
@@ -736,11 +735,14 @@ class RefreshLoadMoreLayout(context: Context, attrs: AttributeSet? = null, defSt
         this.bottomScroll = bottomScroll
         if (footView != null) {
             if (!bottomScroll){
+                scrollTop = 0
+                scrollTo(0,0)
                 removeView(footView)
             }else{
                 setFootView(footRefresh)
             }
         }
+
         requestLayout()
     }
 
